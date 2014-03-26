@@ -1,3 +1,4 @@
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -26,8 +27,8 @@ public class DCManager implements ISubscriber {
     }
     public void run()
     {
-       this.commander.init(factory.getUtility());
-       this.commander.start();
+       //this.commander.init(factory.getUtility());
+       //this.commander.start();
        
        this.controller.subscribe(this);
        this.controller.connect();
@@ -50,3 +51,4 @@ public class DCManager implements ISubscriber {
     }
     
 }
+

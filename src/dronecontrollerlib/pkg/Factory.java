@@ -16,6 +16,7 @@ public abstract class Factory {
     protected Utility utility;
     
     public static final String MYO_TYPE = "MYO";
+    public static final String SOCKET_TYPE = "SOCKET";
     
     public Factory(Utility utility)
     {
@@ -32,6 +33,10 @@ public abstract class Factory {
         if(type == MYO_TYPE)
         {
             return new MyoController(getUtility(),args);
+        }
+        else if(type == SOCKET_TYPE)
+        {
+            return new SocketController(getUtility(), args);
         }
         utility.trace("CreateController : Unknown type");
         return null;

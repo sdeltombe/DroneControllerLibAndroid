@@ -15,6 +15,7 @@ import dronecontrollerlib.pkg.Utility;
 public class AndroidFactory extends Factory{
 
     public static final String SMARTPHONE_TYPE = "SMARTPHONE";
+    public static final String WIIMOTE_TYPE = "WIIMOTE";
     
     public AndroidFactory(Utility utility) {
         super(utility);
@@ -26,6 +27,10 @@ public class AndroidFactory extends Factory{
         if(type == SMARTPHONE_TYPE)
         {
             return new SmartPhoneController(utility,args);
+        }
+        else if(type == WIIMOTE_TYPE)
+        {
+            return new WiimoteController(utility, args);
         }
         
         return super.createController(type,args);
